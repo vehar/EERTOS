@@ -856,8 +856,8 @@ uint16_t	result = TASK_NOT_FOUND;
 uint32_t CalkElapsed(uint32_t start, uint32_t stop)
 {
 uint32_t cycle_time_elapsed  = 0;
-		  if(stop >= start)  { cycle_time_elapsed = stop - start;  }
-		  else { cycle_time_elapsed = start - stop; }
+	if (start >= stop) { cycle_time_elapsed = stop + ~start +1; }
+    else { cycle_time_elapsed = stop - start; }
 return 	cycle_time_elapsed;
 }
 
